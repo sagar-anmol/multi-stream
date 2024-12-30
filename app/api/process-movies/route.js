@@ -9,15 +9,15 @@ export async function POST(req) {
   
       // Example URLs for the 6 GET requests and 1 POST request
       const getApiUrls = [
-        `https://api.example.com/get1?url=${movieUrl}`,
-        `https://api.example.com/get2?url=${movieUrl}`,
-        `https://api.example.com/get3?url=${movieUrl}`,
-        `https://api.example.com/get4?url=${movieUrl}`,
-        `https://api.example.com/get5?url=${movieUrl}`,
-        `https://api.example.com/get6?url=${movieUrl}`,
+        `https://api.turboviplay.com/uploadUrl?keyApi=mutlM3c4ck&url=${movieUrl}`,
+        `https://api.streamtape.com/remotedl/add?login=16e1f59d6da8f1f76d35&key=gl4433r1B2TqlkB&url=${movieUrl}`,
+        `https://earnvidsapi.com/api/upload/url?key=364645jhk5mm67o7jlzt&url=${movieUrl}`,
+        `https://streamhgapi.com/api/upload/url?key=22993xiumj8q0e2joyp3&url=${movieUrl}`,
+        `https://filemoonapi.com/api/remote/add?key=73471o6e8ym1e2ijbygpy&url${movieUrl}`,
+        
       ];
   
-      const postApiUrl = `https://api.example.com/post`;
+      const postApiUrl = `https://upnshare.com//api/v1/video/advance-upload`;
   
       // Call the 6 GET APIs
       const getResponses = await Promise.all(
@@ -33,9 +33,12 @@ const postResponse = await fetch(postApiUrl, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'api-key': 'your-api-key-value',
+    'api-token': '02c4502bae681729ae65ae53',
   },
-  body: JSON.stringify({ url: movieUrl }),
+  body: JSON.stringify({
+    "url": movieUrl,
+    "name": "this is not title"
+  }),
 }).then((res) => res.json());
 
   
